@@ -2,11 +2,11 @@ import { Project, Experience, ResearchPaper, Certification, SkillCategory, Testi
 
 export const PERSONAL_INFO = {
   name: 'Subhadeep Chell',
-  role: 'Programmer Analyst & Full Stack Developer',
-  title: 'Programmer Analyst Trainee | Full Stack Developer | AI & Backend Engineer',
+  role: 'Full Stack Software Engineer',
+  title: 'Full Stack Software Engineer | AI & Backend Engineer | UI/UX Designer',
   bio: 'Computer Science engineer specialized in Java, Spring Boot, React, and AWS cloud microservices. Engineering resilient enterprise backends, high-performance web products, and applied AI systems.',
-  headline: 'Building software where engineering precision meets effortless design.',
-  location: 'West Bengal, India / Kochi, Kerala',
+  headline: 'Code that Thinks. Design that Speaks.',
+  location: 'Kolkata, India / On-site',
   status: 'Open to High-Impact Software Engineering Roles',
   email: 'subhadeep.chell1028@gmail.com',
   github: 'https://github.com/SHERLOCKx90',
@@ -150,13 +150,27 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: 'tcs-kolkata',
+    role: 'Systems Engineer (Grade C1)',
+    company: 'Tata Consultancy Services (TCS)',
+    period: 'Upcoming 2026',
+    location: 'Kolkata, West Bengal, India',
+    type: 'Upcoming (Full-Time)',
+    upcoming: true,
+    highlights: [
+      'Selected for the elite TCS Prime engineering cadre (Grade C1) based on advanced systems design and algorithmic competence.',
+      'Slated to architect scalable full-stack services, enterprise cloud integrations, and high-throughput microservice backends.',
+      'Focusing on high-concurrency architectures, enterprise product resilience, and mission-critical distributed systems.'
+    ],
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'Distributed Systems', 'Cloud Architecture', 'System Design', 'React']
+  },
+  {
     id: 'cognizant-kochi',
     role: 'Programmer Analyst Trainee',
     company: 'Cognizant',
     period: 'Nov 2025 — May 2026',
     location: 'Kochi, Kerala, India',
     type: 'Full-Time (On-Site)',
-    current: true,
     highlights: [
       'Completed intensive full-stack enterprise training in Java, Spring Boot, React, MySQL, AWS NoSQL, and Docker.',
       'Resolved accessibility and UX bugs across Admin, Learner, and Main React repositories for Cognizant Skillspring platform.',
@@ -234,8 +248,8 @@ export const RESEARCH_PAPERS: ResearchPaper[] = [
       'Presented at IEEE International Conference ICEECT 2024'
     ],
     bibtex: `@inproceedings{chell2024threat,\n  title={Real-Time Threat Detection and Mitigation in Web API Development},\n  author={Chell, Subhadeep},\n  booktitle={2024 International Conference on Electrical, Electronics and Computing Technologies (ICEECT)},\n  year={2024},\n  organization={IEEE}\n}`,
-    doi: '10.1109/ICEECT61413.2024.10651811',
-    pdfUrl: 'https://ieeexplore.ieee.org',
+    doi: '10.1109/ICEECT61758.2024.10739333',
+    pdfUrl: 'https://xploreqa.ieee.org/document/10739333',
     tags: ['IEEE ICEECT 2024', 'Web API Security', 'Threat Detection', 'OWASP', 'API Security']
   }
 ];

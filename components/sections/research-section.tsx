@@ -41,9 +41,8 @@ export function ResearchSection() {
     >
       {/* Background Glow */}
       <div
-        className={`absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[160px] pointer-events-none transition-opacity duration-500 ${
-          isOpen ? 'opacity-20 bg-gradient-to-tr from-[#EA4335] via-[#FBBC05] to-[#4285F4]' : 'opacity-5 bg-zinc-800'
-        }`}
+        className={`absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[160px] pointer-events-none transition-opacity duration-500 ${isOpen ? 'opacity-20 bg-gradient-to-tr from-[#EA4335] via-[#FBBC05] to-[#4285F4]' : 'opacity-5 bg-zinc-800'
+          }`}
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -52,14 +51,13 @@ export function ResearchSection() {
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono-tech text-zinc-400 uppercase tracking-widest mb-3">
               <span
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  isOpen ? 'bg-[#EA4335] animate-pulse' : 'bg-zinc-600'
-                }`}
+                className={`w-2 h-2 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#EA4335] animate-pulse' : 'bg-zinc-600'
+                  }`}
               />
               <span>// ACADEMIC DOSSIER & RESEARCH MANUSCRIPT</span>
             </div>
             <TextReveal
-              text="Applied research in Web API security & real-time threat mitigation."
+              text="Hypotheses, Tested and Typed."
               as="h2"
               className="text-4xl sm:text-6xl font-bold font-serif-editorial text-white tracking-tight"
             />
@@ -75,11 +73,10 @@ export function ResearchSection() {
         <div className="w-full flex justify-center">
           <div
             onClick={() => setIsOpen(!isOpen)}
-            className={`relative w-full cursor-pointer transition-all duration-300 rounded-3xl border overflow-hidden backdrop-blur-xl ${
-              isOpen
-                ? 'max-w-5xl bg-[#0c0c12] border-white/25 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.95),0_0_40px_rgba(234,67,53,0.15)]'
-                : 'max-w-3xl bg-[#0b0b10] border-white/8 hover:border-white/20 hover:bg-[#0e0e14] shadow-xl'
-            }`}
+            className={`relative w-full cursor-pointer transition-all duration-300 rounded-3xl border overflow-hidden backdrop-blur-xl ${isOpen
+              ? 'max-w-5xl bg-[#0c0c12] border-white/25 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.95),0_0_40px_rgba(234,67,53,0.15)]'
+              : 'max-w-3xl bg-[#0b0b10] border-white/8 hover:border-white/20 hover:bg-[#0e0e14] shadow-xl'
+              }`}
           >
             {/* 1. Translucent Frosted Washi Tape (Top Center) */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-white/15 backdrop-blur-md border-t border-b border-white/30 shadow-md rotate-[-1deg] z-20 pointer-events-none rounded-sm">
@@ -100,11 +97,10 @@ export function ResearchSection() {
                   <div className="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-white/8">
                     <div className="flex items-center gap-2.5">
                       <div
-                        className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors duration-200 ${
-                          isOpen
-                            ? 'bg-red-500/20 text-red-400 border border-red-500/40 shadow-[0_0_10px_rgba(234,67,53,0.3)]'
-                            : 'bg-zinc-900 text-zinc-500 border border-white/5'
-                        }`}
+                        className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors duration-200 ${isOpen
+                          ? 'bg-red-500/20 text-red-400 border border-red-500/40 shadow-[0_0_10px_rgba(234,67,53,0.3)]'
+                          : 'bg-zinc-900 text-zinc-500 border border-white/5'
+                          }`}
                       >
                         <ShieldAlert className="w-4 h-4" />
                       </div>
@@ -118,16 +114,14 @@ export function ResearchSection() {
 
                     <div className="flex items-center gap-2">
                       <span
-                        className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono-tech flex items-center gap-1.5 transition-colors ${
-                          isOpen
-                            ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/30'
-                            : 'bg-zinc-900 text-zinc-400 border border-white/5'
-                        }`}
+                        className={`px-2.5 py-0.5 rounded-full text-[9px] font-mono-tech flex items-center gap-1.5 transition-colors ${isOpen
+                          ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/30'
+                          : 'bg-zinc-900 text-zinc-400 border border-white/5'
+                          }`}
                       >
                         <span
-                          className={`w-1.5 h-1.5 rounded-full ${
-                            isOpen ? 'bg-emerald-400 animate-pulse' : 'bg-zinc-600'
-                          }`}
+                          className={`w-1.5 h-1.5 rounded-full ${isOpen ? 'bg-emerald-400 animate-pulse' : 'bg-zinc-600'
+                            }`}
                         />
                         <span>PEER REVIEWED</span>
                       </span>
@@ -149,17 +143,16 @@ export function ResearchSection() {
                     </div>
 
                     <h3
-                      className={`text-2xl sm:text-3xl font-bold font-serif-editorial tracking-tight leading-snug mb-3 transition-colors ${
-                        isOpen ? 'text-white' : 'text-zinc-200 group-hover:text-white'
-                      }`}
+                      className={`text-2xl sm:text-3xl font-bold font-serif-editorial tracking-tight leading-snug mb-3 transition-colors ${isOpen ? 'text-white' : 'text-zinc-200 group-hover:text-white'
+                        }`}
                     >
                       {paper.title}
                     </h3>
 
                     <div className="text-xs font-mono-tech text-zinc-400 flex flex-wrap items-center gap-2">
-                      <span className="text-zinc-200 font-medium">Author: Subhadeep Chell</span>
+                      <span className="text-zinc-200 font-medium">Author: Subhadeep Chell, Sainath Chakare, Pinnarwar Sohan, S. Sandosh</span>
                       <span>•</span>
-                      <span className="text-zinc-400">VIT Chennai & Cognizant</span>
+                      <span className="text-zinc-400">VIT Chennai</span>
                       <span>•</span>
                       <span className="text-zinc-500">DOI: {paper.doi}</span>
                     </div>
@@ -169,9 +162,8 @@ export function ResearchSection() {
                   <div className="grid grid-cols-3 gap-2 p-3 rounded-2xl bg-zinc-950/80 border border-white/5 mb-5">
                     <div className="text-center">
                       <div
-                        className={`text-base font-bold font-mono-tech transition-colors ${
-                          isOpen ? 'text-amber-400' : 'text-zinc-300'
-                        }`}
+                        className={`text-base font-bold font-mono-tech transition-colors ${isOpen ? 'text-amber-400' : 'text-zinc-300'
+                          }`}
                       >
                         &lt;4.2ms
                       </div>
@@ -181,9 +173,8 @@ export function ResearchSection() {
                     </div>
                     <div className="text-center">
                       <div
-                        className={`text-base font-bold font-mono-tech transition-colors ${
-                          isOpen ? 'text-emerald-400' : 'text-zinc-300'
-                        }`}
+                        className={`text-base font-bold font-mono-tech transition-colors ${isOpen ? 'text-emerald-400' : 'text-zinc-300'
+                          }`}
                       >
                         99.4%
                       </div>
@@ -193,9 +184,8 @@ export function ResearchSection() {
                     </div>
                     <div className="text-center">
                       <div
-                        className={`text-base font-bold font-mono-tech transition-colors ${
-                          isOpen ? 'text-rose-400' : 'text-zinc-300'
-                        }`}
+                        className={`text-base font-bold font-mono-tech transition-colors ${isOpen ? 'text-rose-400' : 'text-zinc-300'
+                          }`}
                       >
                         OWASP API
                       </div>
@@ -234,11 +224,10 @@ export function ResearchSection() {
                             e.stopPropagation();
                             setActiveTab('notes');
                           }}
-                          className={`px-3 py-1 rounded-lg text-xs font-mono-tech transition-all ${
-                            activeTab === 'notes'
-                              ? 'bg-zinc-800 text-white font-semibold border border-white/20'
-                              : 'text-zinc-400 hover:text-white'
-                          }`}
+                          className={`px-3 py-1 rounded-lg text-xs font-mono-tech transition-all ${activeTab === 'notes'
+                            ? 'bg-zinc-800 text-white font-semibold border border-white/20'
+                            : 'text-zinc-400 hover:text-white'
+                            }`}
                         >
                           Dossier Notes
                         </button>
@@ -247,11 +236,10 @@ export function ResearchSection() {
                             e.stopPropagation();
                             setActiveTab('bibtex');
                           }}
-                          className={`px-3 py-1 rounded-lg text-xs font-mono-tech transition-all ${
-                            activeTab === 'bibtex'
-                              ? 'bg-zinc-800 text-white font-semibold border border-white/20'
-                              : 'text-zinc-400 hover:text-white'
-                          }`}
+                          className={`px-3 py-1 rounded-lg text-xs font-mono-tech transition-all ${activeTab === 'bibtex'
+                            ? 'bg-zinc-800 text-white font-semibold border border-white/20'
+                            : 'text-zinc-400 hover:text-white'
+                            }`}
                         >
                           BibTeX Citation
                         </button>

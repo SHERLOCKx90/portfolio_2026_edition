@@ -98,12 +98,12 @@ export function ScrapbookCard() {
               <Sparkles className="w-3.5 h-3.5 text-amber-400 inline" />
             </h4>
             <p className="text-xs text-zinc-400 tracking-wide mt-0.5">
-              Lead Architect & Full-Stack Crafter
+              Full-Stack Crafter & Passionate Designer
             </p>
           </div>
           <div className="text-right">
             <span className="text-[10px] px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/30 text-blue-400 font-semibold tracking-wider">
-              COGNIZANT
+              TCS
             </span>
           </div>
         </div>
@@ -118,8 +118,8 @@ export function ScrapbookCard() {
             <Zap className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </div>
           <div className="flex flex-col">
-            <span className="text-[10px] sm:text-[11px] font-bold text-white leading-tight">ENGINEERED</span>
-            <span className="text-[8px] sm:text-[9px] text-zinc-400">Zero Lag • 60fps</span>
+            <span className="text-[10px] sm:text-[11px] font-bold text-white leading-tight">FULLY CHARGED</span>
+            <span className="text-[8px] sm:text-[9px] text-zinc-400">Zero Lag • 120fps</span>
           </div>
         </motion.div>
 
@@ -138,7 +138,7 @@ export function ScrapbookCard() {
               />
               <text className="text-[9px] font-mono-tech tracking-[2.5px] uppercase fill-amber-300 font-bold">
                 <textPath href="#stampPath" startOffset="0%">
-                  • VERIFIED DEV • AWWWARDS SPECIMEN •
+                  • VERIFIED DEV • UNIQUE CODE DEV •
                 </textPath>
               </text>
             </svg>

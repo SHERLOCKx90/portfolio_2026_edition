@@ -59,7 +59,7 @@ export function AboutSection() {
             <span>// ABOUT & PHILOSOPHY</span>
           </div>
           <TextReveal
-            text="Crafting software where engineering precision meets editorial elegance."
+            text="README.md"
             as="h2"
             className="text-4xl sm:text-6xl font-bold font-serif-editorial text-white tracking-tight leading-tight max-w-4xl"
           />
@@ -82,7 +82,7 @@ export function AboutSection() {
                 Hi, I'm Subhadeep Chell.
               </h3>
               <p className="text-zinc-300 font-light leading-relaxed">
-                Currently driving full stack enterprise microservices and cloud engineering at <strong className="text-white font-medium">Cognizant</strong>. I specialize in building end-to-end full stack web platforms, distributed backend microservices, and applied AI systems.
+                Currently an upcoming SDE at <strong className="text-white font-medium">TCS</strong>, after driving full stack enterprise microservices and cloud engineering at <strong className="text-white font-medium">Cognizant</strong>. I specialize in building end-to-end full stack web platforms, distributed backend microservices, and applied AI systems.
               </p>
               <p className="text-zinc-400 font-light leading-relaxed">
                 My approach combines Apple's design philosophy—where every layout breathes with intentional whitespace—with the raw performance and developer ergonomics of Linear and Vercel.
@@ -106,7 +106,7 @@ export function AboutSection() {
             <div className="pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono-tech text-zinc-400">
               <span className="flex items-center gap-2 text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                AVAILABLE FOR ADVISORY & KEY ROLES
+                AVAILABLE FOR FULL TIME ROLES
               </span>
               <a href="#contact" className="hover:text-white flex items-center gap-1 transition-colors text-blue-400 hover:text-blue-300">
                 COLLABORATE <ArrowUpRight className="w-3.5 h-3.5" />
@@ -126,14 +126,14 @@ export function AboutSection() {
                     Places Where I Would Love to Work
                   </h4>
                   <p className="text-[10px] font-mono-tech text-zinc-400">
-                    PREFERRED HUBS & TECH ECOSYSTEMS (CLICK FOR ❤️ REACTION)
+                    PREFERRED HUBS & TECH ECOSYSTEMS
                   </p>
                 </div>
               </div>
 
               <span className="text-[10px] font-mono-tech px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-300 hidden sm:flex items-center gap-1.5">
                 <Compass className="w-3 h-3 text-cyan-400 animate-spin" style={{ animationDuration: '12s' }} />
-                DRAG ORBIT
+                DRAG & CLICK
               </span>
             </div>
 

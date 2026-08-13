@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ArrowUp, Heart } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolio-data';
-import { GithubIcon, LinkedinIcon, TwitterIcon } from '@/components/ui/icons';
+import { GithubIcon, LinkedinIcon, TwitterIcon, LeetCodeIcon } from '@/components/ui/icons';
 
 export function Footer() {
   const [timeString, setTimeString] = useState('');
@@ -69,16 +69,16 @@ export function Footer() {
             href={PERSONAL_INFO.leetcode}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-400 hover:text-amber-400 transition-colors text-xs font-mono-tech flex items-center gap-1 font-semibold"
+            className="text-zinc-400 hover:text-white transition-colors"
             aria-label="LeetCode"
           >
-            <span>LC</span>
+            <LeetCodeIcon className="w-5 h-5" />
           </a>
         </div>
 
         {/* Back to top & copyright */}
         <div className="flex items-center gap-6 text-xs font-mono-tech">
-          <span>© {new Date().getFullYear()} Subhadeep Chell. Built with <span className="text-gemini-gradient font-semibold">Gemini Chromatics</span></span>
+          <span>© {new Date().getFullYear()} Subhadeep Chell. Built with <span className="text-gemini-gradient font-semibold">❤️</span></span>
           <button
             onClick={scrollToTop}
             className="p-2 rounded-full border border-zinc-800 bg-zinc-900 text-zinc-400 hover:text-white hover:border-zinc-600 transition-all"

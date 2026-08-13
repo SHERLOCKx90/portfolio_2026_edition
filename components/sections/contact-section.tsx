@@ -107,15 +107,15 @@ export function ContactSection() {
                 stiffness: 260,
                 damping: 20,
               }}
-              className="relative mb-6 z-20 w-full max-w-md"
+              className="relative mb-4 z-20 w-fit max-w-[330px]"
             >
-              {/* Speech Bubble Container */}
-              <div className="relative p-5 rounded-2xl bg-gradient-to-br from-white to-zinc-100 text-zinc-950 shadow-[0_15px_35px_rgba(0,0,0,0.6)] border border-zinc-200">
-                {/* Speech Bubble Tail pointing towards avatar */}
-                <div className="absolute -bottom-3 left-14 w-6 h-6 bg-zinc-100 border-r border-b border-zinc-200 transform rotate-45" />
+              {/* Comic Speech Balloon Container */}
+              <div className="relative px-5 py-3.5 rounded-[26px] rounded-bl-[4px] bg-white text-zinc-950 shadow-[0_15px_35px_rgba(0,0,0,0.5),0_2px_8px_rgba(0,0,0,0.08)] border border-zinc-200/90">
+                {/* Speech Bubble Comic Tail */}
+                <div className="absolute -bottom-2 left-6 w-4 h-4 bg-white border-r border-b border-zinc-200/90 transform rotate-45" />
 
-                {/* Header Tag inside comic bubble */}
-                <div className="flex items-center justify-between mb-2 pb-2 border-b border-zinc-200 text-[10px] font-mono-tech uppercase font-bold text-zinc-500">
+                {/* Header inside comic bubble */}
+                <div className="flex items-center justify-between gap-3 mb-1.5 pb-1.5 border-b border-zinc-100 text-[9px] font-mono-tech uppercase font-bold text-zinc-500">
                   <span className="flex items-center gap-1 text-[#4285F4]">
                     <Sparkles className="w-3 h-3" /> Subhadeep Chell
                   </span>
@@ -125,12 +125,12 @@ export function ContactSection() {
                   </span>
                 </div>
 
-                {/* The Comic Dialogue Text Requested by User */}
-                <p className="text-base sm:text-lg font-bold font-sans tracking-tight text-zinc-900 leading-snug">
+                {/* The Comic Dialogue Text */}
+                <p className="text-[13px] sm:text-sm font-bold font-sans tracking-tight text-zinc-900 leading-snug">
                   “Hey There! Let’s connect. Drop your thoughts here.” 👋
                 </p>
 
-                <p className="text-xs text-zinc-600 mt-1.5 font-light">
+                <p className="text-[10.5px] text-zinc-500 mt-1 font-normal leading-normal">
                   I read every message and respond promptly within 24 hours.
                 </p>
               </div>
@@ -156,7 +156,7 @@ export function ContactSection() {
             >
               {/* Scrapbook Tape / Memo Pin at Top */}
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-amber-100/60 border border-amber-200/40 backdrop-blur-sm shadow-sm rotate-1 z-30 pointer-events-none rounded-sm" />
-              
+
               {/* Metallic Push Pin at Top Corner */}
               <div className="absolute -top-2 left-6 w-5 h-5 rounded-full bg-gradient-to-br from-red-500 to-rose-700 shadow-md border border-white/40 z-30 flex items-center justify-center pointer-events-none">
                 <div className="w-1.5 h-1.5 rounded-full bg-white/80" />
@@ -198,10 +198,10 @@ export function ContactSection() {
                 <div className="mt-3 px-2 flex items-center justify-between text-[11px] font-mono-tech text-zinc-400">
                   <span className="flex items-center gap-1 text-zinc-300">
                     <MapPin className="w-3.5 h-3.5 text-rose-400" />
-                    <span>Kochi, IN / Remote</span>
+                    <span>KOLKATA, IN / ON-SITE</span>
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-zinc-300 font-mono-tech">
-                    © 2026 ARCHIVE
+                    © 2026 EDITION
                   </span>
                 </div>
               </div>
@@ -261,11 +261,11 @@ export function ContactSection() {
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
                 <div>
                   <h3 className="text-2xl sm:text-3xl font-bold font-serif-editorial text-white tracking-tight">
-                    Send a Direct Transmission
+                    Share Your Thoughts
                   </h3>
-                  <p className="text-xs text-zinc-400 font-mono-tech mt-1">
+                  {/* <p className="text-xs text-zinc-400 font-mono-tech mt-1">
                     Delivered straight to Subhadeep’s primary inbox
-                  </p>
+                  </p> */}
                 </div>
                 <div className="w-10 h-10 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-400">
                   <MessageSquare className="w-5 h-5 text-[#4285F4]" />
@@ -282,7 +282,7 @@ export function ContactSection() {
                     <Check className="w-8 h-8" />
                   </div>
                   <h3 className="text-3xl font-bold font-serif-editorial text-white">
-                    Transmission Dispatched!
+                    Message Sent!
                   </h3>
                   <p className="text-sm text-zinc-300 font-light max-w-md mx-auto leading-relaxed">
                     Thank you for reaching out, <span className="text-white font-medium">{formState.name || 'there'}</span>. Subhadeep has received your note and will reply promptly.
@@ -291,7 +291,7 @@ export function ContactSection() {
                     onClick={() => setSubmitted(false)}
                     className="text-xs font-mono-tech text-zinc-400 hover:text-white underline pt-4 transition-colors cursor-pointer"
                   >
-                    Send another transmission ↺
+                    Have another thought? ↺
                   </button>
                 </motion.div>
               ) : (
@@ -328,7 +328,7 @@ export function ContactSection() {
 
                   <div>
                     <label className="block text-xs font-mono-tech text-zinc-400 uppercase tracking-wider mb-2">
-                      Your Message / Opportunity *
+                      Your Message *
                     </label>
                     <textarea
                       required
@@ -349,11 +349,11 @@ export function ContactSection() {
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <span className="w-4 h-4 rounded-full border-2 border-black border-t-transparent animate-spin" />
-                        Transmitting to Subhadeep...
+                        Sending to Subhadeep...
                       </span>
                     ) : (
                       <span className="flex items-center gap-2">
-                        <span>Dispatch Message</span>
+                        <span>Send</span>
                         <Send className="w-4 h-4 text-black" />
                       </span>
                     )}

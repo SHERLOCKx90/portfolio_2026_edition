@@ -32,7 +32,7 @@ export function Preloader() {
         >
           <div className="w-full flex justify-between items-center text-xs font-mono-tech text-zinc-500 uppercase tracking-widest">
             <span>SUBHADEEP CHELL</span>
-            <span>2026 ARCHITECTURE</span>
+            <span>2026 PORTFOLIO</span>
           </div>
 
           {/* Center Logo & Progress */}
@@ -60,7 +60,7 @@ export function Preloader() {
           </div>
 
           <div className="text-xs font-mono-tech text-zinc-500 uppercase tracking-widest">
-            INITIATING SYSTEM ARCHITECTURE...
+            LOADING...
           </div>
         </motion.div>
       )}

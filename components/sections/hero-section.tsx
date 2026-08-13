@@ -20,7 +20,7 @@ export function HeroSection() {
           className="flex items-center gap-2 text-xs font-mono-tech text-zinc-400"
         >
           <Terminal className="w-4 h-4 text-cyan-400" />
-          <span>PORTFOLIO OS // 2026 EDITION</span>
+          <span>PORTFOLIO // 2026 EDITION</span>
         </motion.div>
 
         <motion.div
@@ -30,7 +30,7 @@ export function HeroSection() {
           className="hidden sm:flex items-center gap-1.5 text-xs font-mono-tech text-zinc-400"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#4285F4]" />
-          <span>FULL STACK & AI • COGNIZANT</span>
+          <span>FULL STACK & AI • TCS</span>
         </motion.div>
       </div>
 
@@ -119,10 +119,10 @@ export function HeroSection() {
         </div>
 
         <div className="hidden md:flex gap-8 text-zinc-400 items-center">
-          <span className="hover:text-blue-400 transition-colors">COGNIZANT</span>
-          <span className="hover:text-emerald-400 transition-colors">VIT CHENNAI</span>
-          <span className="hover:text-amber-400 transition-colors">IEEE ICEECT 2024</span>
-          <span className="hover:text-purple-400 transition-colors">GOOGLE CLOUD CERTIFIED</span>
+          <span className="hover:text-blue-400 transition-colors">TCS</span>
+          <span className="hover:text-emerald-400 transition-colors">COGNIZANT</span>
+          <span className="hover:text-amber-400 transition-colors">VIT CHENNAI</span>
+          {/* <span className="hover:text-purple-400 transition-colors">GOOGLE CLOUD CERTIFIED</span> */}
         </div>
       </motion.div>
     </section>

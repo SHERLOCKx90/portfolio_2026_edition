@@ -400,18 +400,17 @@ export function LifeSection() {
       <div className="relative z-10 max-w-6xl mx-auto w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
         <div className="inline-flex items-center gap-2 text-xs font-mono-tech text-zinc-300 uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-zinc-950/85 border border-white/15 backdrop-blur-xl shadow-lg w-fit">
           <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 animate-pulse" />
-          <span>// BEYOND THE CODEBASE • HUMAN AT HEART</span>
+          <span>BEYOND THE CODEBASE</span>
         </div>
 
         {/* Fruitful Song of Life Controller */}
         <div className="flex items-center gap-3">
           <button
             onClick={isPlayingMusic ? pauseFruitfulMusic : resumeFruitfulMusic}
-            className={`px-3.5 py-1.5 rounded-full border text-xs font-mono-tech flex items-center gap-2 backdrop-blur-xl transition-all cursor-pointer shadow-lg ${
-              isPlayingMusic
-                ? 'bg-amber-950/80 text-amber-300 border-amber-500/50 shadow-[0_0_20px_rgba(251,188,5,0.25)]'
-                : 'bg-zinc-950/80 text-zinc-400 hover:text-white border-white/15'
-            }`}
+            className={`px-3.5 py-1.5 rounded-full border text-xs font-mono-tech flex items-center gap-2 backdrop-blur-xl transition-all cursor-pointer shadow-lg ${isPlayingMusic
+              ? 'bg-amber-950/80 text-amber-300 border-amber-500/50 shadow-[0_0_20px_rgba(251,188,5,0.25)]'
+              : 'bg-zinc-950/80 text-zinc-400 hover:text-white border-white/15'
+              }`}
             title={isPlayingMusic ? 'Click to Pause Song of Life' : 'Click to Resume Song of Life'}
           >
             {isPlayingMusic ? (
@@ -422,7 +421,7 @@ export function LifeSection() {
                   <span className="w-0.5 bg-rose-400 animate-pulse h-3.5" style={{ animationDelay: '0.3s' }} />
                   <span className="w-0.5 bg-amber-400 animate-pulse h-1.5" style={{ animationDelay: '0.45s' }} />
                 </div>
-                <span className="font-semibold text-amber-200">SONG OF LIFE 🌸 // PLAYING</span>
+                <span className="font-semibold text-amber-200">MUSIC</span>
                 <Pause className="w-3.5 h-3.5 text-amber-400 ml-1" />
               </>
             ) : (
@@ -433,13 +432,13 @@ export function LifeSection() {
             )}
           </button>
 
-          <div className="hidden sm:flex items-center gap-2 text-xs font-mono-tech text-zinc-300 px-3.5 py-1.5 rounded-full bg-zinc-950/80 border border-white/15 backdrop-blur-xl w-fit">
+          {/* <div className="hidden sm:flex items-center gap-2 text-xs font-mono-tech text-zinc-300 px-3.5 py-1.5 rounded-full bg-zinc-950/80 border border-white/15 backdrop-blur-xl w-fit">
             <Camera className="w-3.5 h-3.5 text-amber-400" />
             <span>
               PREVIEW [{String(activePreviewIndex + 1).padStart(2, '0')} //{' '}
               {String(PREVIEW_BACKGROUND_PHOTOS.length).padStart(2, '0')}]
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -447,7 +446,7 @@ export function LifeSection() {
       <div className="relative z-10 max-w-6xl mx-auto w-full my-auto py-8">
         <div className="max-w-4xl space-y-6">
           <TextReveal
-            text="Into the Life of Subhadeep."
+            text="My Life, Unplugged."
             as="h2"
             className="text-4xl sm:text-6xl lg:text-7xl font-bold font-serif-editorial text-white tracking-tight leading-[1.05]"
           />
@@ -474,7 +473,7 @@ export function LifeSection() {
               className="px-6 sm:px-8 py-4 rounded-2xl bg-white hover:bg-zinc-100 text-black font-bold text-sm font-mono-tech flex items-center gap-2.5 shadow-[0_10px_35px_rgba(255,255,255,0.25)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer group"
             >
               <Film className="w-4 h-4 text-black group-hover:rotate-6 transition-transform" />
-              <span>Explore Full Memoir ({ALL_PHOTOS.length} Stories)</span>
+              <span>Moments</span>
             </button>
 
             <button
@@ -486,7 +485,7 @@ export function LifeSection() {
               className="px-5 py-4 rounded-2xl bg-zinc-950/80 hover:bg-zinc-900 border border-white/20 text-white font-medium text-xs font-mono-tech flex items-center gap-2 backdrop-blur-xl shadow-lg transition-colors cursor-pointer"
             >
               <Grid className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Mosaic Wall</span>
+              <span>Gallery</span>
             </button>
           </div>
         </div>
@@ -499,20 +498,19 @@ export function LifeSection() {
             <button
               key={photo.id}
               onClick={() => setActivePreviewIndex(idx)}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                activePreviewIndex === idx
-                  ? 'w-10 bg-gradient-to-r from-amber-400 via-rose-500 to-emerald-400'
-                  : 'w-2 bg-white/20 hover:bg-white/40'
-              }`}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${activePreviewIndex === idx
+                ? 'w-10 bg-gradient-to-r from-amber-400 via-rose-500 to-emerald-400'
+                : 'w-2 bg-white/20 hover:bg-white/40'
+                }`}
               aria-label={`Preview Slide ${idx + 1}`}
             />
           ))}
         </div>
 
         <div className="flex items-center gap-3 text-zinc-400 text-[11px]">
-          <span>PREVIEW: 3 FEATURED STORIES</span>
+          <span>CLICK EXPLORE</span>
           <span>•</span>
-          <span className="text-zinc-300">CLICK EXPLORE FOR ALL 11 MOMENTS</span>
+          <span className="text-zinc-300">VIEW THE MOMENTS</span>
         </div>
       </div>
 
@@ -564,11 +562,10 @@ export function LifeSection() {
                   {/* Pause-Only Music Pill inside Modal */}
                   <button
                     onClick={isPlayingMusic ? pauseFruitfulMusic : resumeFruitfulMusic}
-                    className={`px-3 py-1.5 rounded-xl border text-xs font-mono-tech flex items-center gap-1.5 transition-all cursor-pointer ${
-                      isPlayingMusic
-                        ? 'bg-amber-950/80 text-amber-300 border-amber-500/40'
-                        : 'bg-zinc-900 text-zinc-400 hover:text-white border-white/10'
-                    }`}
+                    className={`px-3 py-1.5 rounded-xl border text-xs font-mono-tech flex items-center gap-1.5 transition-all cursor-pointer ${isPlayingMusic
+                      ? 'bg-amber-950/80 text-amber-300 border-amber-500/40'
+                      : 'bg-zinc-900 text-zinc-400 hover:text-white border-white/10'
+                      }`}
                   >
                     {isPlayingMusic ? (
                       <>
@@ -587,22 +584,20 @@ export function LifeSection() {
                   <div className="flex items-center gap-1 p-1 rounded-xl bg-zinc-900 border border-white/10">
                     <button
                       onClick={() => setViewMode('carousel')}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-mono-tech flex items-center gap-1.5 transition-all cursor-pointer ${
-                        viewMode === 'carousel'
-                          ? 'bg-white text-black font-bold shadow-md'
-                          : 'text-zinc-400 hover:text-white'
-                      }`}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-mono-tech flex items-center gap-1.5 transition-all cursor-pointer ${viewMode === 'carousel'
+                        ? 'bg-white text-black font-bold shadow-md'
+                        : 'text-zinc-400 hover:text-white'
+                        }`}
                     >
                       <Film className="w-3.5 h-3.5" />
                       <span>Film Carousel</span>
                     </button>
                     <button
                       onClick={() => setViewMode('grid')}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-mono-tech flex items-center gap-1.5 transition-all cursor-pointer ${
-                        viewMode === 'grid'
-                          ? 'bg-white text-black font-bold shadow-md'
-                          : 'text-zinc-400 hover:text-white'
-                      }`}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-mono-tech flex items-center gap-1.5 transition-all cursor-pointer ${viewMode === 'grid'
+                        ? 'bg-white text-black font-bold shadow-md'
+                        : 'text-zinc-400 hover:text-white'
+                        }`}
                     >
                       <Grid className="w-3.5 h-3.5" />
                       <span>Mosaic Wall ({ALL_PHOTOS.length})</span>
@@ -713,11 +708,10 @@ export function LifeSection() {
                         <button
                           key={photo.id}
                           onClick={() => setModalCarouselIndex(idx)}
-                          className={`relative w-16 sm:w-20 aspect-[4/3] rounded-xl overflow-hidden border shrink-0 transition-all cursor-pointer ${
-                            isActive
-                              ? 'border-blue-500 scale-105 ring-2 ring-blue-500/40'
-                              : 'border-white/10 opacity-50 hover:opacity-100'
-                          }`}
+                          className={`relative w-16 sm:w-20 aspect-[4/3] rounded-xl overflow-hidden border shrink-0 transition-all cursor-pointer ${isActive
+                            ? 'border-blue-500 scale-105 ring-2 ring-blue-500/40'
+                            : 'border-white/10 opacity-50 hover:opacity-100'
+                            }`}
                         >
                           <Image
                             src={photo.image}

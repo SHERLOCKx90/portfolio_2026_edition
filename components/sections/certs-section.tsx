@@ -73,23 +73,6 @@ const ACHIEVEMENTS: HallOfFameAchievement[] = [
     rarityPercent: 'Top 1.2% Peer Reviewed',
   },
   {
-    id: 'cognizant-specialist',
-    title: 'Enterprise Specialist',
-    subtitle: 'Spring Boot, React & AWS DynamoDB GSIs',
-    issuer: 'Cognizant (Kochi & Hyderabad)',
-    year: '2026',
-    tier: 'PLATINUM',
-    tierColor: '#34A853',
-    glowColor: 'rgba(52, 168, 83, 0.45)',
-    xpPoints: 1500,
-    credentialId: 'CTS-PAT-2026',
-    verifyUrl: 'https://www.cognizant.com',
-    pixelIcon: 'code',
-    description: 'Engineered microservices for Skillspring platform, authored modular Selenium POM test suites, and solved DynamoDB GSI indexing bottlenecks.',
-    buffs: ['Zero-Downtime Microservices', 'Modular POM Testing', 'DynamoDB GSIs'],
-    rarityPercent: 'Core Production Tier',
-  },
-  {
     id: 'gcp-foundations',
     title: 'Cloud Foundations',
     subtitle: 'Infrastructure & Security Fundamentals',
@@ -414,20 +397,20 @@ export function CertsSection() {
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono-tech text-zinc-400 uppercase tracking-widest mb-3">
               <span className="w-2 h-2 rounded-full bg-[#FBBC05] animate-pulse" />
-              <span>// HALL OF FAME • HEXAGONAL TROPHY VAULT</span>
+              <span>// HALL OF FAME • TROPHY VAULT</span>
             </div>
             <TextReveal
-              text="Verified industry credentials & high-honor accolades."
+              text="XP Gained & Levels Cleared."
               as="h2"
               className="text-4xl sm:text-6xl font-bold font-serif-editorial text-white tracking-tight"
             />
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono-tech text-amber-300 backdrop-blur-md">
+            {/* <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono-tech text-amber-300 backdrop-blur-md">
               <Volume2 className="w-3.5 h-3.5" />
               <span>8-BIT RETRO SFX ACTIVE</span>
-            </div>
+            </div> */}
             <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-white/10 text-xs font-mono-tech text-zinc-400 backdrop-blur-md">
               <Trophy className="w-3.5 h-3.5 text-amber-400" />
               <span>{ACHIEVEMENTS.length} TROPHIES (100%)</span>
@@ -447,9 +430,8 @@ export function CertsSection() {
         <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-l from-[#060609] via-[#060609]/80 to-transparent z-20 pointer-events-none" />
 
         <div
-          className={`flex gap-6 sm:gap-8 w-max animate-marquee items-center ${
-            isPaused ? '[animation-play-state:paused]' : ''
-          }`}
+          className={`flex gap-6 sm:gap-8 w-max animate-marquee items-center ${isPaused ? '[animation-play-state:paused]' : ''
+            }`}
           style={{ animationDuration: '32s' }}
         >
           {marqueeList.map((item, index) => (

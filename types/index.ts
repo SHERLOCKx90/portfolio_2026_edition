@@ -32,6 +32,7 @@ export interface Experience {
   highlights: string[];
   technologies: string[];
   current?: boolean;
+  upcoming?: boolean;
 }
 
 export interface ResearchPaper {

@@ -17,6 +17,7 @@ import {
   Zap,
   Building2,
   Navigation,
+  Lock,
 } from 'lucide-react';
 import { TextReveal } from '@/components/ui/text-reveal';
 
@@ -33,6 +34,7 @@ interface ResumeExperienceNode {
   y: number;
   zoomTarget: { scale: number; x: number; y: number };
   isCurrent: boolean;
+  isUpcoming?: boolean;
   type: string;
   accentColor: string;
   glowColor: string;
@@ -42,6 +44,35 @@ interface ResumeExperienceNode {
 }
 
 const RESUME_EXPERIENCE_NODES: ResumeExperienceNode[] = [
+  {
+    id: 'tcs-kolkata',
+    company: 'TCS',
+    role: 'Systems Engineer (Grade C1)',
+    period: 'Upcoming 2026',
+    location: 'Kolkata, West Bengal, India',
+    region: 'INDIA',
+    coordinates: '22.5726° N, 88.3639° E',
+    latLong: 'LAT 22.57° N • LNG 88.36° E',
+    x: 72.8, // East India / Kolkata
+    y: 46,
+    zoomTarget: { scale: 2.4, x: -160, y: -10 },
+    isCurrent: false,
+    isUpcoming: true,
+    type: 'Upcoming (Full-Time)',
+    accentColor: '#a2ff00ff', // Solar Amber / Gold
+    glowColor: 'rgba(181, 251, 5, 0.4)',
+    highlights: [
+      'Selected for the elite TCS Prime engineering cadre (Grade C1) based on advanced systems design and algorithmic competence.',
+      'Slated to architect scalable full-stack services, enterprise cloud integrations, and high-throughput microservice backends.',
+      'Specializing in high-concurrency architectures, enterprise product resilience, and mission-critical distributed systems.',
+    ],
+    technologies: ['Java', 'Spring Boot', 'Microservices', 'Distributed Systems', 'Cloud Architecture', 'System Design', 'React'],
+    metrics: [
+      { label: 'Engineering Cadre', value: 'Prime (C1)' },
+      { label: 'Domain Core', value: 'Enterprise' },
+      { label: 'Regional Hub', value: 'Kolkata' },
+    ],
+  },
   {
     id: 'cognizant-kochi',
     company: 'Cognizant',
@@ -54,7 +85,7 @@ const RESUME_EXPERIENCE_NODES: ResumeExperienceNode[] = [
     x: 69, // South India / Kerala
     y: 58,
     zoomTarget: { scale: 2.4, x: -140, y: -45 },
-    isCurrent: true, // PRESENT ACTIVE - Only this node pulses in Cyber Emerald
+    isCurrent: false,
     type: 'Full-Time (On-Site)',
     accentColor: '#34A853', // Gemini Cyber Emerald
     glowColor: 'rgba(52, 168, 83, 0.4)',
@@ -140,8 +171,8 @@ const RESUME_EXPERIENCE_NODES: ResumeExperienceNode[] = [
     zoomTarget: { scale: 2.4, x: -150, y: -35 },
     isCurrent: false,
     type: 'Internship (On-Site)',
-    accentColor: '#FBBC05', // Solar Amber
-    glowColor: 'rgba(251, 188, 5, 0.35)',
+    accentColor: '#ff0044ff', // Solar Amber
+    glowColor: 'rgba(255, 0, 111, 0.35)',
     highlights: [
       'Developed full-stack AI applications and scalable SaaS platforms.',
       'Integrated 3+ ML models via robust API pipelines to achieve 99.9% uptime and a 25% increase in user engagement.',
@@ -202,7 +233,7 @@ function LiveClock() {
     return () => clearInterval(interval);
   }, []);
 
-  return <span>KOCHI / IST: {time || 'LIVE'}</span>;
+  return <span>KOLKATA / IST: {time || 'LIVE'}</span>;
 }
 
 export function ExperienceMapSection() {
@@ -224,15 +255,15 @@ export function ExperienceMapSection() {
   // Camera Transformation: Smooth Zoom In vs. Zoomed-out Global World View
   const cameraTransform = isZoomedIn
     ? {
-        scale: activeNode.zoomTarget.scale,
-        x: activeNode.zoomTarget.x,
-        y: activeNode.zoomTarget.y,
-      }
+      scale: activeNode.zoomTarget.scale,
+      x: activeNode.zoomTarget.x,
+      y: activeNode.zoomTarget.y,
+    }
     : {
-        scale: 1,
-        x: 0,
-        y: 0,
-      };
+      scale: 1,
+      x: 0,
+      y: 0,
+    };
 
   return (
     <section
@@ -255,7 +286,7 @@ export function ExperienceMapSection() {
               <span>// GLOBAL WORK EXPERIENCE & REGIONAL DISPATCH</span>
             </div>
             <TextReveal
-              text="Interactive Career Radar & Geospatial Footprint."
+              text="Where I’ve Been Building."
               as="h2"
               className="text-4xl sm:text-6xl font-bold font-serif-editorial text-white tracking-tight"
             />
@@ -269,7 +300,7 @@ export function ExperienceMapSection() {
             </div>
             <div className="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-white/10 text-xs font-mono-tech text-zinc-400 backdrop-blur-md">
               <Globe className="w-3.5 h-3.5 text-blue-400" />
-              <span>TRANSCONTINENTAL (USA & INDIA)</span>
+              <span>GLOBAL FOOTPRINT</span>
             </div>
           </div>
         </div>
@@ -283,24 +314,24 @@ export function ExperienceMapSection() {
                 <button
                   key={node.id}
                   onClick={() => handleNodeSelect(node.id)}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-mono-tech flex items-center gap-2 transition-all duration-300 ${
-                    isSelected
-                      ? 'bg-zinc-900 text-white border border-white/30 shadow-lg scale-[1.02]'
-                      : 'bg-zinc-950/70 text-zinc-400 border border-white/5 hover:text-zinc-200 hover:border-white/15'
-                  }`}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-mono-tech flex items-center gap-2 transition-all duration-300 ${isSelected
+                    ? 'bg-zinc-900 text-white border border-white/30 shadow-lg scale-[1.02]'
+                    : 'bg-zinc-950/70 text-zinc-400 border border-white/5 hover:text-zinc-200 hover:border-white/15'
+                    }`}
                   style={
                     isSelected
                       ? {
-                          boxShadow: `0 0 20px ${node.glowColor}`,
-                          borderColor: node.accentColor,
-                        }
+                        boxShadow: `0 0 20px ${node.glowColor}`,
+                        borderColor: node.accentColor,
+                      }
                       : {}
                   }
                 >
                   <span
-                    className={`w-2 h-2 rounded-full ${node.isCurrent ? 'bg-emerald-400 animate-pulse' : isSelected ? 'bg-white' : 'bg-zinc-600'}`}
+                    className={`w-2 h-2 rounded-full ${node.isCurrent ? 'animate-pulse' : node.isUpcoming ? 'animate-pulse' : ''}`}
                     style={{
-                      backgroundColor: node.isCurrent ? '#34A853' : isSelected ? node.accentColor : '#52525b',
+                      backgroundColor: node.isCurrent ? '#34A853' : node.isUpcoming ? node.accentColor : isSelected ? node.accentColor : '#52525b',
+                      boxShadow: node.isUpcoming || isSelected ? `0 0 10px ${node.glowColor}` : undefined,
                     }}
                   />
                   <span className="font-semibold">{node.company}</span>
@@ -310,6 +341,18 @@ export function ExperienceMapSection() {
                   {node.isCurrent && (
                     <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                       PRESENT
+                    </span>
+                  )}
+                  {node.isUpcoming && (
+                    <span
+                      className="text-[9px] px-1.5 py-0.2 rounded font-mono-tech border"
+                      style={{
+                        backgroundColor: `${node.accentColor}20`,
+                        color: node.accentColor,
+                        borderColor: `${node.accentColor}40`,
+                      }}
+                    >
+                      UPCOMING
                     </span>
                   )}
                 </button>
@@ -350,8 +393,8 @@ export function ExperienceMapSection() {
                 <span>GRID: ORTHOGRAPHIC 10°</span>
               </div>
               <div className="flex items-center gap-2 text-zinc-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                <span>1 PRESENT ON-SITE</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                <span>CAREER TIMELINE • 1 UPCOMING</span>
               </div>
             </div>
 
@@ -443,7 +486,7 @@ export function ExperienceMapSection() {
                     className="opacity-70 animate-pulse"
                   />
 
-                  {/* Inter-India Regional Connection Arcs (Mumbai, Hyderabad, Chennai, Kochi) */}
+                  {/* Inter-India Regional Connection Arcs (Mumbai, Hyderabad, Chennai, Kochi, Kolkata) */}
                   <path
                     d="M 670 252 Q 698 260 690 290"
                     fill="none"
@@ -458,16 +501,25 @@ export function ExperienceMapSection() {
                     strokeWidth="1"
                     strokeDasharray="2 2"
                   />
+                  <path
+                    d="M 690 290 Q 715 250 728 230"
+                    fill="none"
+                    stroke="#a2ff00"
+                    strokeOpacity="0.45"
+                    strokeWidth="1"
+                    strokeDasharray="2 2"
+                  />
 
-                  {/* Current Active Concentric Ring (Kochi, Kerala: 690, 290) */}
-                  <circle cx="690" cy="290" r="24" fill="none" stroke="rgba(52,168,83,0.35)" strokeWidth="0.75" strokeDasharray="3 3" />
-                  <circle cx="690" cy="290" r="7" fill="none" stroke="#34A853" strokeWidth="1" opacity="0.9" />
+                  {/* Upcoming Active Concentric Ring (Kolkata, West Bengal: 728, 230) */}
+                  <circle cx="728" cy="230" r="20" fill="none" stroke="#a2ff00" strokeOpacity="0.35" strokeWidth="0.75" strokeDasharray="3 3" />
+                  <circle cx="728" cy="230" r="6" fill="none" stroke="#a2ff00" strokeWidth="1" opacity="0.9" />
                 </svg>
 
                 {/* Hotspot Beacons for each Resume Experience Node */}
                 {RESUME_EXPERIENCE_NODES.map((node) => {
                   const isSelected = selectedNodeId === node.id;
                   const isCurrent = node.isCurrent;
+                  const isUpcoming = node.isUpcoming;
 
                   return (
                     <button
@@ -480,55 +532,71 @@ export function ExperienceMapSection() {
                       className="absolute -translate-x-1/2 -translate-y-1/2 z-20 group/pin focus:outline-none cursor-pointer"
                       aria-label={`${node.company} - ${node.location}`}
                     >
-                      {/* ONLY the Current/Present experience has the live vibrant pulsing wave */}
+                      {/* Pulse wave for Current / Upcoming experiences */}
                       {isCurrent && (
                         <span className="absolute -inset-3 rounded-full bg-emerald-500/40 animate-ping pointer-events-none" />
+                      )}
+                      {isUpcoming && (
+                        <span
+                          className="absolute -inset-2.5 rounded-full animate-pulse pointer-events-none"
+                          style={{ backgroundColor: `${node.accentColor}35` }}
+                        />
                       )}
 
                       {/* Beacon Core Pin */}
                       <div
-                        className={`relative rounded-full border-2 flex items-center justify-center transition-all duration-300 shadow-2xl ${
-                          isCurrent
-                            ? 'w-5 h-5 bg-zinc-950 border-emerald-400 shadow-[0_0_20px_rgba(52,168,83,0.7)]'
+                        className={`relative rounded-full border-2 flex items-center justify-center transition-all duration-300 shadow-2xl ${isCurrent
+                          ? 'w-5 h-5 bg-zinc-950 border-emerald-400 shadow-[0_0_20px_rgba(52,168,83,0.7)]'
+                          : isUpcoming
+                            ? 'w-4.5 h-4.5 bg-zinc-950'
                             : isSelected
-                            ? 'w-5 h-5 bg-zinc-950 border-white shadow-[0_0_15px_rgba(255,255,255,0.4)]'
-                            : 'w-3.5 h-3.5 bg-zinc-900 border-zinc-600 group-hover/pin:border-zinc-400'
-                        }`}
+                              ? 'w-5 h-5 bg-zinc-950 border-white shadow-[0_0_15px_rgba(255,255,255,0.4)]'
+                              : 'w-3.5 h-3.5 bg-zinc-900 border-zinc-600 group-hover/pin:border-zinc-400'
+                          }`}
                         style={
                           isCurrent
                             ? { borderColor: '#34A853' }
-                            : isSelected
-                            ? { borderColor: node.accentColor }
-                            : {}
+                            : isUpcoming
+                              ? { borderColor: node.accentColor, boxShadow: `0 0 15px ${node.glowColor}` }
+                              : isSelected
+                                ? { borderColor: node.accentColor }
+                                : {}
                         }
                       >
                         <div
-                          className={`rounded-full transition-transform duration-300 ${
-                            isCurrent
-                              ? 'w-2 h-2 bg-emerald-400 scale-100'
-                              : isSelected
+                          className={`rounded-full transition-transform duration-300 ${isCurrent
+                            ? 'w-2 h-2 bg-emerald-400 scale-100'
+                            : isUpcoming
                               ? 'w-2 h-2 scale-100'
-                              : 'w-1.5 h-1.5 bg-zinc-500 group-hover/pin:scale-125'
-                          }`}
+                              : isSelected
+                                ? 'w-2 h-2 scale-100'
+                                : 'w-1.5 h-1.5 bg-zinc-500 group-hover/pin:scale-125'
+                            }`}
                           style={
                             isCurrent
                               ? { backgroundColor: '#34A853' }
-                              : isSelected
-                              ? { backgroundColor: node.accentColor }
-                              : {}
+                              : isUpcoming
+                                ? { backgroundColor: node.accentColor }
+                                : isSelected
+                                  ? { backgroundColor: node.accentColor }
+                                  : {}
                           }
                         />
                       </div>
 
                       {/* Tooltip Label */}
                       <div
-                        className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2 py-0.5 rounded bg-black/90 border border-white/20 text-[9px] font-mono-tech whitespace-nowrap text-white shadow-xl transition-all duration-300 pointer-events-none ${
-                          isSelected || isCurrent
-                            ? 'opacity-100 translate-y-0 scale-100'
-                            : 'opacity-0 -translate-y-1 scale-90 group-hover/pin:opacity-100 group-hover/pin:translate-y-0'
-                        }`}
+                        className={`absolute top-full left-1/2 -translate-x-1/2 mt-1.5 px-2 py-0.5 rounded bg-black/90 border border-white/20 text-[9px] font-mono-tech whitespace-nowrap text-white shadow-xl transition-all duration-300 pointer-events-none ${isSelected || isCurrent || isUpcoming
+                          ? 'opacity-100 translate-y-0 scale-100'
+                          : 'opacity-0 -translate-y-1 scale-90 group-hover/pin:opacity-100 group-hover/pin:translate-y-0'
+                          }`}
                       >
-                        <span className={isCurrent ? 'text-emerald-300 font-bold' : 'text-zinc-300'}>
+                        <span
+                          style={{
+                            color: isCurrent ? '#34A853' : isUpcoming ? node.accentColor : isSelected ? '#ffffff' : '#d4d4d8',
+                            fontWeight: isCurrent || isUpcoming || isSelected ? 'bold' : 'normal',
+                          }}
+                        >
                           {node.company}
                         </span>{' '}
                         <span className="text-zinc-500">• {node.location.split(',')[0]}</span>
@@ -609,60 +677,123 @@ export function ExperienceMapSection() {
                   </div>
                 </div>
 
-                {/* Quantitative Benchmark KPI Matrix */}
-                <div className="grid grid-cols-3 gap-2 p-3.5 rounded-2xl bg-zinc-950/80 border border-white/8 mb-6 shadow-inner">
-                  {activeNode.metrics.map((m, idx) => (
-                    <div key={idx} className="text-center">
-                      <div
-                        className="text-sm sm:text-base font-bold font-mono-tech truncate"
-                        style={{ color: activeNode.accentColor }}
-                      >
-                        {m.value}
+                {/* Check if node is upcoming -> Show Locked Mode with blurred bg and Lock icon */}
+                {activeNode.isUpcoming ? (
+                  <div className="relative mt-2">
+                    {/* Blurred Background Preview */}
+                    <div className="filter blur-[8px] opacity-25 pointer-events-none select-none space-y-6">
+                      {/* Quantitative Benchmark KPI Matrix */}
+                      <div className="grid grid-cols-3 gap-2 p-3.5 rounded-2xl bg-zinc-950/80 border border-white/8 shadow-inner">
+                        {activeNode.metrics.map((m, idx) => (
+                          <div key={idx} className="text-center">
+                            <div className="text-sm font-bold font-mono-tech" style={{ color: activeNode.accentColor }}>
+                              {m.value}
+                            </div>
+                            <div className="text-[9px] font-mono-tech text-zinc-400 uppercase tracking-wider">
+                              {m.label}
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                      <div className="text-[9px] font-mono-tech text-zinc-400 uppercase tracking-wider truncate">
-                        {m.label}
+
+                      {/* Highlights List Preview */}
+                      <div className="space-y-3">
+                        <div className="h-4 bg-white/10 rounded w-full" />
+                        <div className="h-4 bg-white/10 rounded w-5/6" />
+                        <div className="h-4 bg-white/10 rounded w-4/6" />
+                      </div>
+
+                      {/* Tech Stack Preview */}
+                      <div className="flex flex-wrap gap-1.5 pt-2">
+                        {activeNode.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-[10px] font-mono-tech px-2.5 py-0.5 rounded-md bg-zinc-900/90 text-zinc-400 border border-white/10"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                  ))}
-                </div>
 
-                {/* Highlights List from Resume */}
-                <div className="mb-6">
-                  <h4 className="text-xs font-mono-tech uppercase tracking-wider text-zinc-400 mb-3 flex items-center gap-1.5">
-                    <Zap className="w-3.5 h-3.5 text-amber-400" /> Key Deliverables & Systems Impact
-                  </h4>
-                  <ul className="space-y-2.5">
-                    {activeNode.highlights.map((h, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2.5 text-xs text-zinc-300 font-light leading-relaxed"
-                      >
-                        <CheckCircle2
-                          className="w-3.5 h-3.5 mt-0.5 shrink-0"
-                          style={{ color: activeNode.accentColor }}
-                        />
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                    {/* Locked Mode Foreground Card */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-20 backdrop-blur-md bg-black/40 rounded-2xl">
+                      <Lock className="w-8 h-8 mb-3" style={{ color: activeNode.accentColor }} />
 
-                {/* Tech Stack Matrix */}
-                <div className="pt-4 border-t border-white/8">
-                  <div className="text-[10px] font-mono-tech uppercase text-zinc-400 mb-2">
-                    Technologies & Infra:
+                      <h4 className="text-xl sm:text-2xl font-bold font-serif-editorial text-white mb-2 tracking-tight">
+                        Coming Soon ...
+                      </h4>
+
+                      <div className="grid grid-cols-2 gap-2.5 w-full max-w-xs text-left mt-2">
+                        <div className="p-3 rounded-xl bg-zinc-900/60 border border-white/10">
+                          <div className="text-[9px] font-mono-tech text-zinc-500 uppercase tracking-wider">Cadre Level</div>
+                          <div className="text-xs font-mono-tech mt-0.5 font-semibold" style={{ color: activeNode.accentColor }}>Prime (Grade C1)</div>
+                        </div>
+                        <div className="p-3 rounded-xl bg-zinc-900/60 border border-white/10">
+                          <div className="text-[9px] font-mono-tech text-zinc-500 uppercase tracking-wider">Deployment Hub</div>
+                          <div className="text-xs font-mono-tech text-zinc-200 mt-0.5">Kolkata, IN</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {activeNode.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[10px] font-mono-tech px-2.5 py-0.5 rounded-md bg-zinc-900/90 text-zinc-300 border border-white/10"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                ) : (
+                  <>
+                    {/* Quantitative Benchmark KPI Matrix */}
+                    <div className="grid grid-cols-3 gap-2 p-3.5 rounded-2xl bg-zinc-950/80 border border-white/8 mb-6 shadow-inner">
+                      {activeNode.metrics.map((m, idx) => (
+                        <div key={idx} className="text-center">
+                          <div
+                            className="text-sm sm:text-base font-bold font-mono-tech truncate"
+                            style={{ color: activeNode.accentColor }}
+                          >
+                            {m.value}
+                          </div>
+                          <div className="text-[9px] font-mono-tech text-zinc-400 uppercase tracking-wider truncate">
+                            {m.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Highlights List from Resume */}
+                    <div className="mb-6">
+                      <h4 className="text-xs font-mono-tech uppercase tracking-wider text-zinc-400 mb-3 flex items-center gap-1.5">
+                        <Zap className="w-3.5 h-3.5 text-amber-400" /> Key Deliverables & Systems Impact
+                      </h4>
+                      <ul className="space-y-2.5">
+                        {activeNode.highlights.map((h, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2.5 text-xs text-zinc-300 font-light leading-relaxed"
+                          >
+                            <CheckCircle2
+                              className="w-3.5 h-3.5 mt-0.5 shrink-0"
+                              style={{ color: activeNode.accentColor }}
+                            />
+                            <span>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Tech Stack Matrix */}
+                    <div className="pt-4 border-t border-white/8">
+                      <div className="text-[10px] font-mono-tech uppercase text-zinc-400 mb-2">
+                        Technologies & Infra:
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {activeNode.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-[10px] font-mono-tech px-2.5 py-0.5 rounded-md bg-zinc-900/90 text-zinc-300 border border-white/10"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>

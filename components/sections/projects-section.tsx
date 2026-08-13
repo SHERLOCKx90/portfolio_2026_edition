@@ -30,7 +30,7 @@ export function ProjectsSection() {
               <span>// FEATURED PRODUCTS & LAUNCHES</span>
             </div>
             <TextReveal
-              text="Engineered for impact. Built for scale."
+              text="Compiled & Deployed."
               as="h2"
               className="text-4xl sm:text-6xl font-bold font-serif-editorial text-white tracking-tight"
             />
@@ -42,11 +42,10 @@ export function ProjectsSection() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full text-xs font-mono-tech transition-all duration-300 ${
-                  activeCategory === category
-                    ? 'bg-white text-black font-semibold shadow-lg shadow-white/10 scale-105'
-                    : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white hover:border-zinc-700'
-                }`}
+                className={`px-4 py-2 rounded-full text-xs font-mono-tech transition-all duration-300 ${activeCategory === category
+                  ? 'bg-white text-black font-semibold shadow-lg shadow-white/10 scale-105'
+                  : 'bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white hover:border-zinc-700'
+                  }`}
               >
                 {category}
               </button>

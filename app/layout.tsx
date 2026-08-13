@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Subhadeep Chell — Senior Software Engineer & AI Specialist',
+  title: 'Subhadeep Chell — Full Stack Software Engineer & UI/UX Designer',
   description: 'Portfolio of Subhadeep Chell: Software Engineer, Full Stack Developer, AI Specialist, and Researcher crafting high-performance product architectures.',
   keywords: [
     'Subhadeep Chell',
@@ -31,17 +31,31 @@ export const metadata: Metadata = {
     'AI Engineer',
     'Next.js 15',
     'Spring Boot',
-    'TCS Prime',
+    'TCS',
     'Portfolio 2026',
+    'UI/UX Designer',
+    'Java'
   ],
   authors: [{ name: 'Subhadeep Chell' }],
   openGraph: {
-    title: 'Subhadeep Chell — Senior Software Engineer & AI Specialist',
+    title: 'Subhadeep Chell — Full Stack Software Engineer & UI/UX Designer',
     description: 'Building software that feels effortless. Ultra-luxury portfolio software product.',
-    url: 'https://subhadeep.dev',
-    siteName: 'Subhadeep Chell Portfolio',
+    url: 'https://subhadeepchell.vercel.app',
+    siteName: 'Subhadeep Chell Portfolio 2026 Edition',
     locale: 'en_US',
     type: 'website',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
   },
 };
 
